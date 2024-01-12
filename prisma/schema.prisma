@@ -21,11 +21,11 @@ model User {
   emailVerified DateTime?
   image         String?
   password      String?
-  address       String
-  city          String
-  state         String
-  zip           String
-  phone         String
+  address       String?
+  city          String?
+  state         String?
+  zip           String?
+  phone         String?
   role          UserRole @default(USER)
   accounts      Account[]
   isTwoFactorEnabled Boolean @default(false)

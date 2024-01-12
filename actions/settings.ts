@@ -1,6 +1,5 @@
 "use server";
 
-import * as z from "zod";
 import bcrypt from "bcryptjs";
 
 import { update } from "@/auth";
@@ -10,6 +9,7 @@ import { getUserByEmail, getUserById } from "@/data/user";
 import { currentUser } from "@/lib/auth";
 import { generateVerificationToken } from "@/lib/tokens";
 import { sendVerificationEmail } from "@/lib/mail";
+import { z } from "zod";
 
 export const settings = async (
   values: z.infer<typeof SettingsSchema>
@@ -82,6 +82,8 @@ export const settings = async (
       email: updatedUser.email,
       isTwoFactorEnabled: updatedUser.isTwoFactorEnabled,
       role: updatedUser.role,
+    
+
     }
   });
 
